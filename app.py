@@ -38,9 +38,9 @@ with st.form('word_search'):
         st.header(f'Probabilities for _{word}_:')
         col1, col2 = st.columns(2)
         with col1:
-          st.metric('1+ Green Letters', value=f'{p_green}%')
+          st.metric('Green Letter(s)', value=f'{p_green}%')
         with col2:
-          st.metric('1+ Green/Yellow Letters', value=f'{p_green_yellow}%')
+          st.metric('Green/Yellow Letter(s)', value=f'{p_green_yellow}%')
 
       else:
         st.write('No match found')
