@@ -20,7 +20,8 @@ def load_probs():
 df = load_probs()
 
 st.title('Project Nerdle')
-st.write('Type your favorite starting [Wordle](https://www.nytimes.com/games/wordle/index.html) word, and see your chances of getting a green or yellow letter. For methodology, visit [Kaggle](https://www.kaggle.com/shortbear/finding-the-best-starter-word-for-wordle).')
+st.write('Enter your favorite starting word for [Wordle](https://www.nytimes.com/games/wordle/index.html), and see your chances of getting a green or yellow letter.')
+st.caption('For methodology, visit [Kaggle](https://www.kaggle.com/shortbear/finding-the-best-starter-word-for-wordle).')
 
 with st.form('word_search'):
   word = st.text_input('Favorite starter word')
