@@ -17,6 +17,9 @@ def load_probs():
   df.rename(columns=new_cols, inplace=True)
   return df
 
+def sorted_head(df, cols, ascending=[False, False]):
+  return df.sort_values(cols, ascending=ascending).head().reset_index(drop=True).drop(columns=[HEADER_DUPLICATES])
+
 df = load_probs()
 
 st.title('Project Nerdle')
@@ -50,12 +53,20 @@ st.caption('For methodology, visit [Kaggle](https://www.kaggle.com/shortbear/fin
 st.header('Need a better word?')
 st.write("Here are the best starting words, depending on your priorities.")
 
-st.subheader('Green letters (w/o duplicates)')
-st.table(data=df[~df[HEADER_DUPLICATES]].sort_values([HEADER_GREEN, HEADER_GREEN_YELLOW], ascending=[False, False]).head().reset_index(drop=True).drop(columns=[HEADER_DUPLICATES]))
+st.subheader('Green letter(s) (w/o duplicates)')
+st.table(data=sorted_head(df[~df[HEADER_DUPLICATES]], [HEADER_GREEN, HEADER_GREEN_YELLOW]))
 
-st.subheader('Green letters (with duplicates)')
-st.table(data=df.sort_values([HEADER_GREEN, HEADER_GREEN_YELLOW], ascending=[False, False]).head().reset_index(drop=True).drop(columns=[HEADER_DUPLICATES]))
+st.subheader('Green letter(s) (with duplicates)')
+st.table(data=sorted_head(df, [HEADER_GREEN, HEADER_GREEN_YELLOW]))
 
-st.subheader('Green or yellow letters')
-st.table(data=df.sort_values([HEADER_GREEN_YELLOW, HEADER_GREEN], ascending=[False, False]).head().reset_index(drop=True).drop(columns=[HEADER_DUPLICATES]))
+st.subheader('Green or yellow letter(s)')
+st.table(data=sorted_head(df, [HEADER_GREEN_YELLOW, HEADER_GREEN]))
 
+st.header('Need a terrible word?')
+st.write("Here are the worst options.")
+
+st.subheader('Green letter(s)')
+st.table(data=sorted_head(df, [HEADER_GREEN, HEADER_GREEN_YELLOW], [True, True]))
+
+st.subheader('Green or yellow letter(s)')
+st.table(data=sorted_head(df, [HEADER_GREEN_YELLOW, HEADER_GREEN], [True, True]))
