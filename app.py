@@ -1,9 +1,9 @@
 import pandas as pd
 import streamlit as st
 
-HEADER_GREEN = 'Probability of 1+ Greens'
-HEADER_GREEN_YELLOW = 'Probability of 1+ Greens or Yellows'
-HEADER_DUPLICATES = 'Has Duplicate Letters'
+HEADER_GREEN = '% Chance of green letter(s)'
+HEADER_GREEN_YELLOW = '% Chance of green/yellow letter(s)'
+HEADER_DUPLICATES = 'Has duplicate letters'
 
 @st.cache
 def load_probs():
