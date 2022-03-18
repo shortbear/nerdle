@@ -1,8 +1,8 @@
 import pandas as pd
 import streamlit as st
 
-HEADER_GREEN = 'Probability of 1+ Green Letters'
-HEADER_GREEN_YELLOW = 'Probability of 1+ Green or Yellow Letters'
+HEADER_GREEN = 'Probability of 1+ Greens'
+HEADER_GREEN_YELLOW = 'Probability of 1+ Greens or Yellows'
 HEADER_DUPLICATES = 'Has Duplicate Letters'
 
 @st.cache
