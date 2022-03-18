@@ -2,6 +2,8 @@
 
 The goal of this project is to find the ideal starter word for Wordle.
 
+A notebook containing my methodology can be found [here](./EDA.ipynb).
+
 ## Executive Summary
 
 If you care more about finding green letters, the following list of words are your best bet:
