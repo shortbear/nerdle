@@ -48,7 +48,7 @@ with st.form('word_search'):
 st.caption('For methodology, visit [Kaggle](https://www.kaggle.com/shortbear/finding-the-best-starter-word-for-wordle).')
 
 st.header('Need a better word?')
-st.write("Here are some handy lists, depending on your priorities.")
+st.write("Here are the best starting words, depending on your priorities.")
 
 st.subheader('Green letters (w/o duplicates)')
 st.table(data=df[~df[HEADER_DUPLICATES]].sort_values([HEADER_GREEN, HEADER_GREEN_YELLOW], ascending=[False, False]).head().reset_index(drop=True))
