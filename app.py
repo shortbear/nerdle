@@ -51,11 +51,11 @@ st.header('Need a better word?')
 st.write("Here are the best starting words, depending on your priorities.")
 
 st.subheader('Green letters (w/o duplicates)')
-st.table(data=df[~df[HEADER_DUPLICATES]].sort_values([HEADER_GREEN, HEADER_GREEN_YELLOW], ascending=[False, False]).head().reset_index(drop=True))
+st.table(data=df[~df[HEADER_DUPLICATES]].sort_values([HEADER_GREEN, HEADER_GREEN_YELLOW], ascending=[False, False]).head().reset_index(drop=True)).drop(columns=[HEADER_DUPLICATES])
 
 st.subheader('Green letters (with duplicates)')
-st.table(data=df.sort_values([HEADER_GREEN, HEADER_GREEN_YELLOW], ascending=[False, False]).head().reset_index(drop=True))
+st.table(data=df.sort_values([HEADER_GREEN, HEADER_GREEN_YELLOW], ascending=[False, False]).head().reset_index(drop=True)).drop(columns=[HEADER_DUPLICATES])
 
 st.subheader('Green or yellow letters')
-st.table(data=df.sort_values([HEADER_GREEN_YELLOW, HEADER_GREEN], ascending=[False, False]).head().reset_index(drop=True))
+st.table(data=df.sort_values([HEADER_GREEN_YELLOW, HEADER_GREEN], ascending=[False, False]).head().reset_index(drop=True)).drop(columns=[HEADER_DUPLICATES])
 
